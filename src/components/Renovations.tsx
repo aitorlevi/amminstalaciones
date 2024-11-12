@@ -24,12 +24,12 @@ export const Renovations = ({ setImages, setIsOpen }: Props) => {
         <div className="renovations-container">
           {renovationsData.map((renovation, index) => (
             <div className="renovation" key={index}>
-              <h3>{renovation.name}</h3>
-              <p>{renovation.description}</p>
               <img
                 src={renovation.main_image}
                 onClick={() => showModal(renovation.images)}
               />
+              <h3>{renovation.name}</h3>
+              <p>{renovation.description}</p>
             </div>
           ))}
         </div>

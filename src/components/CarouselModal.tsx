@@ -8,15 +8,15 @@ type Props = {
 
 export const CarouselModal = ({ setIsOpen, images }: Props) => {
   return (
-    <>
+    <section className="modal">
       <div className="modal-background" onClick={() => setIsOpen(false)}></div>
 
       <div className="carousel-container">
         <Carousel images={images} />
       </div>
       <button className="close-btn" onClick={() => setIsOpen(false)}>
-        <RiCloseLine style={{ marginBottom: "-3px" }} />
+        <RiCloseLine />
       </button>
-    </>
+    </section>
   );
 };
