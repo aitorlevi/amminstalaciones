@@ -8,7 +8,7 @@ export const MeetUs = () => {
       <h2>Quiénes somos</h2>
       <div className="content">
         <p>
-          En AMM INSTALACIONES, somos especialistas en reformas integrales y
+          En AMM INSTALACIONES, somos especialistas en renovationas integrales y
           parciales, brindando soluciones innovadoras y personalizadas a
           nuestros clientes. Nos dedicamos a transformar todo tipo de espacios,
           desde viviendas y oficinas hasta locales comerciales, adaptándonos
@@ -29,7 +29,7 @@ export const MeetUs = () => {
           </article>
         </div>
         <p>
-          Confía en nosotros para llevar a cabo la reforma de tus sueños.
+          Confía en nosotros para llevar a cabo la renovationa de tus sueños.
           Nuestro equipo de expertos está aquí para ayudarte a dar vida a tus
           ideas.
         </p>

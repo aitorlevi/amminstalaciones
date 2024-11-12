@@ -41,8 +41,8 @@ export const Contact = () => {
         <div className="copy">
           <p>
             ¿Tienes alguna idea o proyecto en mente? ¡Nos encantaría saber más
-            sobre tus necesidades de reforma! Completa el formulario y uno de
-            nuestros expertos se pondrá en contacto contigo a la brevedad.
+            sobre tus necesidades de renovationa! Completa el formulario y uno
+            de nuestros expertos se pondrá en contacto contigo a la brevedad.
           </p>
         </div>
         <form ref={form} onSubmit={onSubmit} className="form">

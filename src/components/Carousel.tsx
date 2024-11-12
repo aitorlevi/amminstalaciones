@@ -3,12 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export const Carousel = ({ images }: { images: string[] }) => {
   return (
-    <ReactCarousel
-      showThumbs={false}
-      autoPlay
-      infiniteLoop={true}
-      showIndicators={false}
-    >
+    <ReactCarousel showThumbs={false} autoPlay infiniteLoop={true}>
       {images.map((image, index) => (
         <div key={index}>
           <img src={image} />
