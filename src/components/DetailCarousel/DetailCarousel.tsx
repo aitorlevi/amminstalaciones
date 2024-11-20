@@ -1,7 +1,7 @@
 import { Carousel as ReactCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export const Carousel = ({ images }: { images: string[] }) => {
+const DetailCarousel = ({ images }: { images: string[] }) => {
   return (
     <ReactCarousel showThumbs={false} autoPlay infiniteLoop={true}>
       {images.map((image, index) => (
@@ -12,3 +12,5 @@ export const Carousel = ({ images }: { images: string[] }) => {
     </ReactCarousel>
   );
 };
+
+export default DetailCarousel;

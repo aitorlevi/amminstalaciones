@@ -41,8 +41,11 @@ export const Contact = () => {
         <div className="copy">
           <p>
             ¿Tienes alguna idea o proyecto en mente? ¡Nos encantaría saber más
-            sobre tus necesidades de reforma! Completa el formulario y uno de
-            nuestros expertos se pondrá en contacto contigo a la brevedad.
+            sobre tus necesidades de reforma! Llámanos al{" "}
+            <a href="tel:+34629067099">629067099</a> o{" "}
+            <a href="tel:+34696730964">696730964</a>. También puedes completar
+            el formulario y nuestros expertos se pondrá en contacto contigo en
+            brevedad.
           </p>
         </div>
         <form ref={form} onSubmit={onSubmit} className="form">
@@ -61,6 +64,11 @@ export const Contact = () => {
           <input type="submit" value="Enviar" />
         </form>
       </div>
+      <p>
+        En AMMINSTALACIONES, tu satisfacción es nuestra prioridad. Cada proyecto
+        es una oportunidad de transformar espacios y mejorar vidas. ¡Hablemos y
+        comienza hoy a dar vida a tus ideas!
+      </p>
     </section>
   );
 };

@@ -1,8 +1,8 @@
-import compromise from "../assets/images/meet-us/compromiso.png";
-import attention from "../assets/images/meet-us/atencion-personalizada.png";
-import quality from "../assets/images/meet-us/calidad.png";
+import compromise from "../../assets/images/meet-us/compromiso.png";
+import attention from "../../assets/images/meet-us/atencion-personalizada.png";
+import quality from "../../assets/images/meet-us/calidad.png";
 
-export const MeetUs = () => {
+const MeetUs = () => {
   return (
     <section className="meet-us">
       <h2>Quiénes somos</h2>
@@ -37,3 +37,5 @@ export const MeetUs = () => {
     </section>
   );
 };
+
+export default MeetUs;
