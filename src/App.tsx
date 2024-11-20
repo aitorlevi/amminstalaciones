@@ -1,8 +1,8 @@
-import "./App.css";
 import { Contact } from "./components/Contact/Contact";
 import Renovations from "./components/Renovations/Renovations";
 import MeetUs from "./components/MeetUs/MeetUs";
 import { useState } from "react";
+import styles from "./App.module.scss";
 import CarouselModal from "./components/CarouselModal/CarouselModal";
 
 export const App = () => {
@@ -11,16 +11,16 @@ export const App = () => {
 
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <h1>AMM INSTALACIONES Y REFORMAS</h1>
         <h3>Transformando tus espacios, renovando tu vida.</h3>
       </header>
-      <div className="page-content">
+      <div className={styles.pageContent}>
         <MeetUs />
         <Renovations />
         <Contact />
       </div>
-      <footer>
+      <footer className={styles.footer}>
         <span>
           <a href="mailto: amminstalaciones@hotmail.es">
             amminstalaciones@hotmail.es
