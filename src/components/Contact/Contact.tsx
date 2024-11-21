@@ -1,5 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form"; // Or your preferred form library
+import emailjs from "@emailjs/browser";
+import styles from "./Contact.module.scss";
 
 type FormData = {
   name: string;
@@ -7,38 +9,48 @@ type FormData = {
   message: string;
 };
 
-export const Contact = () => {
-  const { register, handleSubmit, reset } = useForm<FormData>();
-  const form = useRef(null);
+const emailJsKey = import.meta.env.VITE_EMAIL_JS_KEY;
+const emailJsService = import.meta.env.VITE_EMAIL_JS_SERVICE;
+const emailJsTemplate = import.meta.env.VITE_EMAIL_JS_TEMPLATE;
 
-  const onSubmit = handleSubmit((e) => {
-    alert(JSON.stringify(e));
-    // emailjs
-    //   .sendForm("service_i4lhr9k", "template_2fgp6e4", form.current, {
-    //     publicKey: "g9wYisThgHuwKMggl",
-    //   })
-    //   .then(
-    //     () => {
-    //       notificationContext.setNotificationText(data.form.messageSent);
-    //       notificationContext.showNotification();
-    //       $(submit.current).attr("disabled", false);
-    //     },
-    //     (error) => {
-    //       notificationContext.setNotificationText(error.text);
-    //       notificationContext.showNotification();
-    //       $(submit.current).attr("disabled", false);
-    //     }
-    //   );
+export const Contact = () => {
+  const [notification, setNotification] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
+  const { register, handleSubmit, reset } = useForm<FormData>();
+  const form = useRef<HTMLFormElement>(null);
+
+  const onSubmit = handleSubmit(() => {
+    if (form.current) {
+      emailjs
+        .sendForm("service_i4lhr9k", emailJsTemplate, form.current, emailJsKey)
+        .then(
+          () => {
+            setNotification({
+              message: "Mensaje enviado correctamente.",
+              type: "success",
+            });
+            reset();
+          },
+          () => {
+            setNotification({
+              message: "Error al enviar el mensaje. Inténtalo de nuevo.",
+              type: "error",
+            });
+          }
+        );
+    }
   });
   {
     /* TODO Gracias por contactarnos. Nuestro equipo se pondrá en contacto contigo pronto para ayudarte a llevar a cabo el proyecto de tus sueños. */
   }
 
   return (
-    <section className="contact">
+    <section>
       <h2>Contáctanos</h2>
-      <div className="content">
-        <div className="copy">
+      <div className={styles.content}>
+        <div className={styles.copy}>
           <p>
             ¿Tienes alguna idea o proyecto en mente? ¡Nos encantaría saber más
             sobre tus necesidades de reforma! Llámanos al{" "}
@@ -48,16 +60,16 @@ export const Contact = () => {
             brevedad.
           </p>
         </div>
-        <form ref={form} onSubmit={onSubmit} className="form">
-          <div className="input-form">
+        <form ref={form} onSubmit={onSubmit} className={styles.form}>
+          <div className={styles.inputForm}>
             <label htmlFor="name">Nombre:</label>
             <input type="text" {...register("name")} />
           </div>
-          <div className="input-form">
+          <div className={styles.inputForm}>
             <label htmlFor="email">Email:</label>
             <input type="email" {...register("email")} />
           </div>
-          <div className="input-form">
+          <div className={styles.inputForm}>
             <label htmlFor="message">Mensaje:</label>
             <textarea rows={8} {...register("message")} />
           </div>
@@ -69,6 +81,11 @@ export const Contact = () => {
         es una oportunidad de transformar espacios y mejorar vidas. ¡Hablemos y
         comienza hoy a dar vida a tus ideas!
       </p>
+      {notification && (
+        <div className={`${styles.notification} ${styles[notification.type]}`}>
+          {notification.message}
+        </div>
+      )}
     </section>
   );
 };

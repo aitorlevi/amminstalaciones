@@ -1,6 +1,8 @@
 // COLORS
 
 $color-primary: #2c3e50;
+$color-accent: #d35400;
+$color-accent-hover: #a14000;
 $color-success: #28a745;
 $color-danger: #dc3545;
 $color-warning: #ffc107;
@@ -22,3 +24,6 @@ $breakpoint-desktop: 992px;
 
 // UTILITIES
 $border-radius: $spacing-xs;
+
+// TRANSITIONS
+$transition: 0.2s ease;

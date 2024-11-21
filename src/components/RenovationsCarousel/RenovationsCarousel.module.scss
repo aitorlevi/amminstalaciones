@@ -3,6 +3,10 @@
 
 .renovation {
   margin: 0 variables.$spacing-sm;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   img {
     width: 100%;
     border-radius: variables.$border-radius;

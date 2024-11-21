@@ -1,14 +1,9 @@
 import { Contact } from "./components/Contact/Contact";
 import Renovations from "./components/Renovations/Renovations";
 import MeetUs from "./components/MeetUs/MeetUs";
-import { useState } from "react";
 import styles from "./App.module.scss";
-import CarouselModal from "./components/CarouselModal/CarouselModal";
 
 export const App = () => {
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
-  // const [images, setImages] = useState<string[]>([]);
-
   return (
     <>
       <header className={styles.header}>
@@ -27,7 +22,6 @@ export const App = () => {
           </a>
         </span>
       </footer>
-      {/* {isOpen && <CarouselModal setIsOpen={setIsOpen} />} */}
     </>
   );
 };

@@ -1,24 +1,38 @@
 import { RiCloseLine } from "react-icons/ri";
-import DetailCarousel from "../DetailCarousel/DetailCarousel";
+import styles from "./CarouselModal.module.scss";
+import { Carousel as ReactCarousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-// type Props = {
-//   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-//   images: string[];
-// };
+type Props = {
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  images: string[];
+};
 
-const CarouselModal = () => {
+const CarouselModal: React.FC<Props> = ({ setIsOpen, images }) => {
   return (
-    <h1>carousel modal</h1>
-    // <section className="modal">
-    //   <div className="modal-background" onClick={() => setIsOpen(false)}></div>
-
-    //   <div className="carousel-container">
-    //     <DetailCarousel images={images} />
-    //   </div>
-    //   <button className="close-btn" onClick={() => setIsOpen(false)}>
-    //     <RiCloseLine />
-    //   </button>
-    // </section>
+    <>
+      <div className={styles.background} onClick={() => setIsOpen(false)}></div>
+      <div className={styles.container}>
+        <ReactCarousel
+          showThumbs={false}
+          showStatus={false}
+          infiniteLoop={true}
+          emulateTouch={true}
+        >
+          {images.map((image, index) => (
+            <div key={index}>
+              <img src={image} draggable="true" />
+            </div>
+          ))}
+        </ReactCarousel>
+      </div>
+      <button
+        className={`button ${styles.closeButton}`}
+        onClick={() => setIsOpen(false)}
+      >
+        <RiCloseLine />
+      </button>
+    </>
   );
 };
 

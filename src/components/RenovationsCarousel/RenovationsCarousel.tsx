@@ -3,16 +3,18 @@ import "react-multi-carousel/lib/styles.css";
 import { RenovationItem } from "../../data/renovationData";
 import { useState } from "react";
 import styles from "./RenovationsCarousel.module.scss";
+import CarouselModal from "../CarouselModal/CarouselModal";
 
-const RenovationsCarousel = ({
-  carouselData,
-  title,
-}: {
-  carouselData: RenovationItem[];
+type Props = {
   title: string;
-}) => {
+  carouselData: RenovationItem[];
+};
+
+const RenovationsCarousel: React.FC<Props> = ({ title, carouselData }) => {
   const [mouseState, setMouseState] = useState({ isMoving: false });
-  console.log(carouselData);
+  const [selectedRenovation, setSelectedRenovation] =
+    useState<RenovationItem | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -32,6 +34,7 @@ const RenovationsCarousel = ({
       items: 1,
     },
   };
+
   return (
     <>
       <h3 className={styles.test}>{title}</h3>
@@ -43,12 +46,30 @@ const RenovationsCarousel = ({
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >
         {carouselData.map((renovation) => (
-          <div className={styles.renovation} key={renovation.id}>
+          <div
+            className={styles.renovation}
+            key={renovation.id}
+            onClick={(e) => {
+              // Prevent link click during carousel movement
+              if (mouseState.isMoving) {
+                e.preventDefault();
+              } else {
+                setSelectedRenovation(renovation);
+                setIsOpen(true);
+              }
+            }}
+          >
             <img src={renovation.mainImage} draggable="false" />
             <h4>{renovation.title}</h4>
           </div>
         ))}
       </MultiCarousel>
+      {isOpen && selectedRenovation && (
+        <CarouselModal
+          setIsOpen={setIsOpen}
+          images={selectedRenovation.images}
+        />
+      )}
     </>
   );
 };

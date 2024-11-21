@@ -1,0 +1,23 @@
+@use "./variables";
+
+.button {
+  display: inline-block;
+  padding: variables.$spacing-sm variables.$spacing-md;
+  text-align: center;
+  text-decoration: none;
+  color: variables.$color-light;
+  background: variables.$color-accent;
+  border: none;
+  border-radius: variables.$border-radius;
+  cursor: pointer;
+  transition: background-color variables.$transition;
+
+  &:hover {
+    background-color: variables.$color-accent-hover;
+  }
+
+  &:disabled {
+    background-color: variables.$color-light;
+    cursor: not-allowed;
+  }
+}

@@ -1,45 +1,40 @@
-.modal {
-  .modal-background {
-    width: 100vw;
-    height: 100vh;
-    background-color: #333333;
-    opacity: 0.5;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    position: fixed;
-  }
+@use "sass:color";
+@use "../../styles/base/variables";
 
-  .carousel-container {
-    width: 90vw;
-    height: auto;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-  }
-  .close-btn {
-    position: fixed;
-    top: 5%;
-    right: 10%;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-size: 40px;
-    color: #ffffff;
-    background: #d35400;
-    align-items: center;
-    line-height: 0;
-  }
-  @media only screen and (min-width: 768px) {
-    .close-btn {
-      top: 30px;
-      right: 90px;
-    }
-    .carousel-container {
-      width: 60vw;
-    }
-  }
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(variables.$color-dark, 0.9);
+  z-index: 900;
+  top: 0;
+  left: 0;
+  position: fixed;
+  overflow: hidden;
 }
+
+.container {
+  position: fixed;
+  width: 90vw;
+  height: auto;
+  z-index: 950;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+.closeButton {
+  z-index: 950;
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+  font-size: 2rem;
+  padding: variables.$spacing-xs;
+}
+// @media only screen and (min-width: 768px) {
+//   .close-btn {
+//     top: 30px;
+//     right: 90px;
+//   }
+//   .carousel-container {
+//     width: 60vw;
+//   }
+// }
