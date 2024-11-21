@@ -13,7 +13,7 @@ h4,
 h5,
 h6 {
   font-weight: 600;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
@@ -23,27 +23,28 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 1.75rem;
   color: variables.$color-primary;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-style: italic;
 }
 
 h4 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
+  color: variables.$color-primary;
 }
 
 h5 {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 h6 {
-  font-size: 0.875em;
+  font-size: 0.875rem;
 }
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }

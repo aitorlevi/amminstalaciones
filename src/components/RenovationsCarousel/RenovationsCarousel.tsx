@@ -34,7 +34,7 @@ const RenovationsCarousel = ({
   };
   return (
     <>
-      <h2 className={styles.test}>{title}</h2>
+      <h3 className={styles.test}>{title}</h3>
       <MultiCarousel
         beforeChange={() => setMouseState({ isMoving: true })}
         afterChange={() => setMouseState({ isMoving: false })}
@@ -43,9 +43,9 @@ const RenovationsCarousel = ({
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >
         {carouselData.map((renovation) => (
-          <div className="renovation" key={renovation.id}>
+          <div className={styles.renovation} key={renovation.id}>
             <img src={renovation.mainImage} draggable="false" />
-            <h3>{renovation.title}</h3>
+            <h4>{renovation.title}</h4>
           </div>
         ))}
       </MultiCarousel>

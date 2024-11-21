@@ -6,7 +6,7 @@ import styles from "./App.module.scss";
 import CarouselModal from "./components/CarouselModal/CarouselModal";
 
 export const App = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
   // const [images, setImages] = useState<string[]>([]);
 
   return (

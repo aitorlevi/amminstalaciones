@@ -1,0 +1,13 @@
+@use "../../styles/base/variables";
+@use "../../styles/base/mixins";
+
+.renovation {
+  margin: 0 variables.$spacing-sm;
+  img {
+    width: 100%;
+    border-radius: variables.$border-radius;
+  }
+  h4 {
+    text-align: center;
+  }
+}

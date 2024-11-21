@@ -9,3 +9,16 @@ $color-light: #f8f9fa;
 $color-dark: #343a40;
 
 // SPACING
+$spacing-xs: 0.25rem;
+$spacing-sm: $spacing-xs * 2;
+$spacing-md: $spacing-sm * 2;
+$spacing-lg: $spacing-md * 2;
+$spacing-xl: $spacing-lg * 2;
+
+// BREAKPOINTS
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+
+// UTILITIES
+$border-radius: $spacing-xs;
