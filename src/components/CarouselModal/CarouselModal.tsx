@@ -6,9 +6,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 type Props = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   images: string[];
+  description: string;
 };
 
-const CarouselModal: React.FC<Props> = ({ setIsOpen, images }) => {
+const CarouselModal: React.FC<Props> = ({ setIsOpen, images, description }) => {
   return (
     <>
       <div className={styles.background} onClick={() => setIsOpen(false)}></div>
@@ -25,6 +26,7 @@ const CarouselModal: React.FC<Props> = ({ setIsOpen, images }) => {
             </div>
           ))}
         </ReactCarousel>
+        <p className={styles.description}>{description}</p>
       </div>
       <button
         className={`button ${styles.closeButton}`}

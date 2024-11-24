@@ -50,3 +50,9 @@ h6 {
 #root {
   isolation: isolate;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-style: italic;
+}

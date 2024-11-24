@@ -11,6 +11,8 @@
   border-radius: variables.$border-radius;
   cursor: pointer;
   transition: background-color variables.$transition;
+  width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     background-color: variables.$color-accent-hover;
@@ -20,4 +22,16 @@
     background-color: variables.$color-light;
     cursor: not-allowed;
   }
+}
+
+input,
+textarea {
+  border: 1px solid variables.$color-primary;
+  background-color: variables.$color-light;
+  padding: variables.$spacing-sm;
+  border-radius: variables.$border-radius;
+  width: 100%;
+}
+textarea {
+  resize: none;
 }

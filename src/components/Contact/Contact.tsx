@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form"; // Or your preferred form library
 import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.scss";
@@ -21,6 +21,15 @@ export const Contact = () => {
   const { register, handleSubmit, reset } = useForm<FormData>();
   const form = useRef<HTMLFormElement>(null);
 
+  useEffect(() => {
+    if (notification) {
+      const timeout = setTimeout(() => {
+        setNotification(null);
+      }, 3000);
+      return () => clearTimeout(timeout);
+    }
+  }, [notification]);
+
   const onSubmit = handleSubmit(() => {
     if (form.current) {
       emailjs
@@ -28,7 +37,8 @@ export const Contact = () => {
         .then(
           () => {
             setNotification({
-              message: "Mensaje enviado correctamente.",
+              message:
+                "¡Gracias por contactarnos! Nuestro equipo se pondrá en contacto contigo pronto para ayudarte a llevar a cabo el proyecto de tus sueños.",
               type: "success",
             });
             reset();
@@ -42,9 +52,6 @@ export const Contact = () => {
         );
     }
   });
-  {
-    /* TODO Gracias por contactarnos. Nuestro equipo se pondrá en contacto contigo pronto para ayudarte a llevar a cabo el proyecto de tus sueños. */
-  }
 
   return (
     <section>
@@ -73,7 +80,7 @@ export const Contact = () => {
             <label htmlFor="message">Mensaje:</label>
             <textarea rows={8} {...register("message")} />
           </div>
-          <input type="submit" value="Enviar" />
+          <input type="submit" className="button" value="Enviar" />
         </form>
       </div>
       <p>

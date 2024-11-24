@@ -17,7 +17,6 @@ const RenovationsCarousel: React.FC<Props> = ({ title, carouselData }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -68,6 +67,7 @@ const RenovationsCarousel: React.FC<Props> = ({ title, carouselData }) => {
         <CarouselModal
           setIsOpen={setIsOpen}
           images={selectedRenovation.images}
+          description={selectedRenovation.description}
         />
       )}
     </>

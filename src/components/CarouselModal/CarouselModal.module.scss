@@ -20,6 +20,14 @@
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
+
+  .description {
+    color: variables.$color-dark;
+    background-color: variables.$color-light;
+    padding: variables.$spacing-md;
+    border-radius: 0 0 variables.$border-radius variables.$border-radius;
+    text-align: left;
+  }
 }
 .closeButton {
   z-index: 950;
