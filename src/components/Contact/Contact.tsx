@@ -33,7 +33,7 @@ export const Contact = () => {
   const onSubmit = handleSubmit(() => {
     if (form.current) {
       emailjs
-        .sendForm("service_i4lhr9k", emailJsTemplate, form.current, emailJsKey)
+        .sendForm(emailJsService, emailJsTemplate, form.current, emailJsKey)
         .then(
           () => {
             setNotification({
