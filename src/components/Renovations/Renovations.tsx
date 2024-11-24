@@ -2,7 +2,6 @@ import RenovationsCarousel from "../RenovationsCarousel/RenovationsCarousel";
 import renovationData from "../../data/renovationData";
 
 const Renovations = () => {
-  console.log(renovationData);
   return (
     <section>
       <h2>Nuestros Proyectos</h2>

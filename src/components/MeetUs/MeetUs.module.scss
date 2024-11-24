@@ -1,23 +1,28 @@
 @use "../../styles/base/variables";
 @use "../../styles/base/mixins";
 
-.content {
-  .values {
-    display: flex;
+.values {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: variables.$spacing-lg;
+  margin: variables.$spacing-xl 0;
+  .value {
+    @include mixins.flex-center;
     flex-direction: column;
-    align-items: stretch;
-    gap: variables.$spacing-lg;
-    margin: variables.$spacing-xl 0;
+    text-align: center;
+    gap: variables.$spacing-md;
+    img {
+      max-width: 100px;
+      filter: invert(21%) sepia(33%) saturate(531%) hue-rotate(169deg)
+        brightness(95%) contrast(94%);
+    }
+  }
+
+  @include mixins.responsive(variables.$breakpoint-mobile) {
+    flex-direction: row;
     .value {
-      @include mixins.flex-center;
-      flex-direction: column;
-      text-align: center;
-      gap: variables.$spacing-md;
-      img {
-        max-width: 100px;
-        filter: invert(21%) sepia(33%) saturate(531%) hue-rotate(169deg)
-          brightness(95%) contrast(94%);
-      }
+      flex: 1;
     }
   }
 }

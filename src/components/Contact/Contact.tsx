@@ -60,8 +60,8 @@ export const Contact = () => {
         <div className={styles.copy}>
           <p>
             ¿Tienes alguna idea o proyecto en mente? ¡Nos encantaría saber más
-            sobre tus necesidades de reforma! Llámanos al{" "}
-            <a href="tel:+34629067099">629067099</a> o{" "}
+            sobre tus necesidades de reforma! Llámanos al&nbsp;
+            <a href="tel:+34629067099">629067099</a> o&nbsp;
             <a href="tel:+34696730964">696730964</a>. También puedes completar
             el formulario y nuestros expertos se pondrá en contacto contigo en
             brevedad.

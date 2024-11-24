@@ -1,11 +1,12 @@
 @use "sass:color";
 @use "../../styles/base/variables";
+@use "../../styles/base/mixins";
 
 .background {
   width: 100vw;
   height: 100vh;
   background-color: rgba(variables.$color-dark, 0.9);
-  z-index: 900;
+  z-index: 1020;
   top: 0;
   left: 0;
   position: fixed;
@@ -16,7 +17,7 @@
   position: fixed;
   width: 90vw;
   height: auto;
-  z-index: 950;
+  z-index: 1050;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
@@ -28,21 +29,16 @@
     border-radius: 0 0 variables.$border-radius variables.$border-radius;
     text-align: left;
   }
+
+  @include mixins.responsive(variables.$breakpoint-mobile) {
+    width: auto;
+  }
 }
 .closeButton {
-  z-index: 950;
+  z-index: 1050;
   position: fixed;
   top: 5vh;
   right: 5vw;
   font-size: 2rem;
   padding: variables.$spacing-xs;
 }
-// @media only screen and (min-width: 768px) {
-//   .close-btn {
-//     top: 30px;
-//     right: 90px;
-//   }
-//   .carousel-container {
-//     width: 60vw;
-//   }
-// }

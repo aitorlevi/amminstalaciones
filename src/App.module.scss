@@ -3,6 +3,12 @@
 .header {
   text-align: center;
   padding: variables.$spacing-md;
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 800px;
+  }
 }
 
 .pageContent {
@@ -16,7 +22,9 @@
 }
 
 .footer {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
   background-color: variables.$color-primary;
   color: variables.$color-light;
   padding: variables.$spacing-md;
@@ -31,5 +39,14 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .social {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    height: 48px;
   }
 }

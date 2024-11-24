@@ -27,7 +27,7 @@ const getRenovationData = (category: string) => {
 
   return Object.keys(categoryImages).map((subfolder) => ({
     id: subfolder,
-    title: "",
+    // title: "",
     description: "",
     mainImage: categoryImages[subfolder][0],
     images: categoryImages[subfolder],
@@ -36,7 +36,7 @@ const getRenovationData = (category: string) => {
 
 type RenovationItem = {
   id: string;
-  title: string;
+  // title: string;
   description: string;
   mainImage: string;
   images: string[];
@@ -63,25 +63,28 @@ const renovationData: RenovationData = {
 const updateData = (
   folder: RenovationType,
   id: string,
-  newTitle: string,
+  // newTitle: string,
   newDescription: string
 ) => {
   renovationData[folder] = renovationData[folder].map((renovation) =>
     renovation.id === id
-      ? { ...renovation, title: newTitle, description: newDescription }
-      : renovation
+      ? { ...renovation, description: newDescription }
+      : // ? { ...renovation, title: newTitle, description: newDescription }
+        renovation
   );
 };
 
-updateData("bathroom", "bathroom_1", "Reforma de baño", "descripción");
-updateData("community", "facade", "Reforma de Fachada", "descripción");
-updateData("kitchen", "kitchen_1", "Reforma de Cocina  1", "descripción");
-updateData("kitchen", "kitchen_2", "Reforma de Cocina 2", "descripción");
-updateData("kitchen", "kitchen_3", "Reforma de Cocina 3", "descripción");
-updateData("kitchen", "kitchen_4", "Reforma de Cocina 4", "descripción");
-updateData("other", "attic", "Reforma de Buhardilla", "descripción");
-updateData("other", "custom_furniture", "Muebles a medida", "descripción");
-
-console.log(renovationData); // Verificar los cambios
+updateData(
+  "community",
+  "facade",
+  "¡Trabajos de limpieza de fachada para una mejor apariencia!"
+);
+updateData("other", "attic", "Reforma de Buhardilla");
+updateData("other", "custom_furniture", "Muebles a medida");
+// updateData("bathroom", "bathroom_1", "descripción");
+// updateData("kitchen", "kitchen_1", "Cocina 1", "Cocina con muebles de uñero");
+// updateData("kitchen", "kitchen_2", "Cocina 2", "Cocina con mármol negro");
+// updateData("kitchen", "kitchen_3", "Reforma de Cocina 3", "descripción");
+// updateData("kitchen", "kitchen_4", "Reforma de Cocina 4", "descripción");
 
 export default renovationData;

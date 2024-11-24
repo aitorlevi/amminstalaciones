@@ -1,17 +1,22 @@
 @use "../../styles/base/variables";
 @use "../../styles/base/mixins";
 
-.renovation {
-  margin: 0 variables.$spacing-sm;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  img {
-    width: 100%;
-    border-radius: variables.$border-radius;
-  }
-  h4 {
-    text-align: center;
+.carouselContainer {
+  margin: 0 0 variables.$spacing-lg 0;
+  .renovation {
+    margin: 0 variables.$spacing-sm;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: variables.$border-radius;
+      object-fit: cover;
+    }
+    h4 {
+      text-align: center;
+    }
   }
 }

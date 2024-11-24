@@ -1,4 +1,5 @@
 @use "../../styles/base/variables";
+@use "../../styles/base/mixins";
 @use "sass:color";
 
 .content {
@@ -23,13 +24,16 @@
     }
   }
 }
-@media only screen and (min-width: 768px) {
+@include mixins.responsive(variables.$breakpoint-mobile) {
   .content {
-    padding: 25px;
     flex-direction: row;
+    margin-bottom: variables.$spacing-xl;
     .copy {
       max-width: 50%;
-      padding: 25px 25px 0 0;
+      padding-right: variables.$spacing-lg;
+    }
+    .form {
+      margin: 0;
     }
   }
 }
@@ -39,12 +43,12 @@
   width: 90vw;
   top: 1vw;
   right: 5vw;
-  z-index: 100;
+  z-index: 1010;
   margin-top: variables.$spacing-md;
   padding: variables.$spacing-sm variables.$spacing-md;
   border-radius: variables.$border-radius;
-  text-align: center;
-  max-width: 400px;
+  text-align: left;
+  max-width: 700px;
 
   &.success {
     background-color: variables.$color-success;

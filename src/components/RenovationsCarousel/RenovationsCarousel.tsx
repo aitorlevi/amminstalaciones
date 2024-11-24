@@ -42,6 +42,7 @@ const RenovationsCarousel: React.FC<Props> = ({ title, carouselData }) => {
         afterChange={() => setMouseState({ isMoving: false })}
         responsive={responsive}
         infinite
+        containerClass={styles.carouselContainer}
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >
         {carouselData.map((renovation) => (
@@ -49,7 +50,6 @@ const RenovationsCarousel: React.FC<Props> = ({ title, carouselData }) => {
             className={styles.renovation}
             key={renovation.id}
             onClick={(e) => {
-              // Prevent link click during carousel movement
               if (mouseState.isMoving) {
                 e.preventDefault();
               } else {
@@ -59,7 +59,6 @@ const RenovationsCarousel: React.FC<Props> = ({ title, carouselData }) => {
             }}
           >
             <img src={renovation.mainImage} draggable="false" />
-            <h4>{renovation.title}</h4>
           </div>
         ))}
       </MultiCarousel>
