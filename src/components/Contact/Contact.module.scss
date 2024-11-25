@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  a {
+    font-weight: bold;
+  }
   .form {
     display: flex;
     flex-direction: column;
@@ -23,9 +26,7 @@
       width: fit-content;
     }
   }
-}
-@include mixins.responsive(variables.$breakpoint-mobile) {
-  .content {
+  @include mixins.responsive(variables.$breakpoint-mobile) {
     flex-direction: row;
     margin-bottom: variables.$spacing-xl;
     .copy {

@@ -84,9 +84,11 @@ export const Contact = () => {
         </form>
       </div>
       <p>
-        En AMMINSTALACIONES, tu satisfacción es nuestra prioridad. Cada proyecto
-        es una oportunidad de transformar espacios y mejorar vidas. ¡Hablemos y
-        comienza hoy a dar vida a tus ideas!
+        En <b>A.M.M. INSTALACIONES</b>, tu satisfacción es nuestra prioridad.
+        Cada proyecto es una oportunidad de transformar espacios y mejorar
+        vidas.
+        <br />
+        ¡Hablemos y comienza hoy a dar vida a tus ideas!
       </p>
       {notification && (
         <div className={`${styles.notification} ${styles[notification.type]}`}>
