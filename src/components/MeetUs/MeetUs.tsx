@@ -8,11 +8,11 @@ const MeetUs = () => {
     <section>
       <h2>Quiénes somos</h2>
       <p>
-        En AMM INSTALACIONES, somos especialistas en reformas integrales y
-        parciales, brindando soluciones innovadoras y personalizadas a nuestros
-        clientes. Nos dedicamos a transformar todo tipo de espacios, desde
-        viviendas y oficinas hasta locales comerciales, adaptándonos siempre a
-        las necesidades y estilo de cada cliente.
+        En <b>A.M.M. INSTALACIONES</b>, somos especialistas en reformas
+        integrales y parciales, brindando soluciones innovadoras y
+        personalizadas a nuestros clientes. Nos dedicamos a transformar todo
+        tipo de espacios, desde viviendas y oficinas hasta locales comerciales,
+        adaptándonos siempre a las necesidades y estilo de cada cliente.
       </p>
       <div className={styles.values}>
         <div className={styles.value}>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useForm } from "react-hook-form"; // Or your preferred form library
+import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.scss";
 

@@ -33,6 +33,10 @@
   @include mixins.responsive(variables.$breakpoint-mobile) {
     width: auto;
   }
+
+  img {
+    max-height: 90vh;
+  }
 }
 .closeButton {
   z-index: 1050;
